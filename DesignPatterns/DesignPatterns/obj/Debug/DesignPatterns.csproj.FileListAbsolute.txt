@@ -1,0 +1,5 @@
+C:\Users\Elessandra\git\design_patterns\DesignPatterns\DesignPatterns\bin\Debug\DesignPatterns.exe.config
+C:\Users\Elessandra\git\design_patterns\DesignPatterns\DesignPatterns\bin\Debug\DesignPatterns.exe
+C:\Users\Elessandra\git\design_patterns\DesignPatterns\DesignPatterns\bin\Debug\DesignPatterns.pdb
+C:\Users\Elessandra\git\design_patterns\DesignPatterns\DesignPatterns\obj\Debug\DesignPatterns.exe
+C:\Users\Elessandra\git\design_patterns\DesignPatterns\DesignPatterns\obj\Debug\DesignPatterns.pdb
