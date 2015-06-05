@@ -13,10 +13,13 @@ namespace DesignPatterns
             Orcamento orcamento = new Orcamento(1000.0);
             Imposto icms = new ICMS();
             Imposto iss = new ISS();
+            Imposto iccc = new ICCC();
 
             CalculadorDeImposto calculador = new CalculadorDeImposto();
             calculador.CalculaImposto(orcamento, icms);
             calculador.CalculaImposto(orcamento, iss);
+            calculador.CalculaImposto(orcamento, iccc);
+            Console.WriteLine(iccc.Calcula(orcamento));
 
             Console.ReadKey();
         }
