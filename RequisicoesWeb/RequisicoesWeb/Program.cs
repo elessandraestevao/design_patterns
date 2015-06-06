@@ -10,7 +10,7 @@ namespace RequisicoesWeb
     {
         static void Main(string[] args)
         {
-            Requisicao requisicao = new Requisicao(new Formato());
+            Requisicao requisicao = new Requisicao(Formato.XML);
             Conta conta = new Conta(1000.0, "João");
 
             CriadorDeResposta criador = new CriadorDeResposta();

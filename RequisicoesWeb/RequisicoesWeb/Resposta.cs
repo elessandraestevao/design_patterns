@@ -8,7 +8,7 @@ namespace RequisicoesWeb
 {
     public interface Resposta
     {
-        Resposta Proxima { get; set; }
-        void Responde(Requisicao requisicao, Conta conta);
+        //Resposta Proxima { get; set; }
+        void Responde(Requisicao requisicao, Conta conta);        
     }
 }

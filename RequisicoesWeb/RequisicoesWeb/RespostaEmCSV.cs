@@ -8,7 +8,17 @@ namespace RequisicoesWeb
 {
     public class RespostaEmCSV : Resposta
     {
-        public Resposta Proxima { get; set; }           
+        public Resposta Proxima { get; set; }
+
+        public RespostaEmCSV(Resposta resposta)
+        {
+            this.Proxima = resposta;
+        }
+
+        public RespostaEmCSV()
+        {
+            this.Proxima = null;
+        }
 
         public void Responde(Requisicao requisicao, Conta conta)
         {
@@ -16,9 +26,14 @@ namespace RequisicoesWeb
             {
                 Console.WriteLine(conta.Nome + ";" + conta.Saldo);
             }
-            else
+            else if(Proxima != null)
             {
                 Proxima.Responde(requisicao, conta);
+            }
+            else
+            {
+                //Não existe próxima, é o final da cadeia
+                throw new Exception("Nenhum tipo de resposta foi definido: XML, CSV ou PORCENTO!");
             }
         }
     }

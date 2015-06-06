@@ -10,6 +10,7 @@ namespace RequisicoesWeb
     {
         XML,
         CSV,
-        PORCENTO
+        PORCENTO,
+        OUTRO
     }
 }
