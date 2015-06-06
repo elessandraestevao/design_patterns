@@ -20,6 +20,7 @@ namespace DesignPatterns
 
             CalculadorDeDesconto calculador = new CalculadorDeDesconto();
             Console.WriteLine(calculador.Calcula(orcamento));
+            Console.ReadKey();
             /*Imposto icms = new ICMS();
             Imposto iss = new ISS();
             Imposto iccc = new ICCC();
@@ -28,9 +29,7 @@ namespace DesignPatterns
             calculador.CalculaImposto(orcamento, icms);
             calculador.CalculaImposto(orcamento, iss);
             calculador.CalculaImposto(orcamento, iccc);
-            Console.WriteLine(iccc.Calcula(orcamento));*/
-
-            Console.ReadKey();
+            Console.WriteLine(iccc.Calcula(orcamento));*/            
         }
     }
 }
