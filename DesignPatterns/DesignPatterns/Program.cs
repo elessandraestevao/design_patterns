@@ -10,7 +10,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            Orcamento orcamento = new Orcamento(450.0);
+            Orcamento orcamento = new Orcamento(1000.0);
             orcamento.AdicionaItem(new Item("LAPIS", 100.0));
             orcamento.AdicionaItem(new Item("Item2", 200.0));
             orcamento.AdicionaItem(new Item("Item3", 300.0));
@@ -18,9 +18,9 @@ namespace DesignPatterns
             orcamento.AdicionaItem(new Item("Item5", 500.0));
             orcamento.AdicionaItem(new Item("CANETA", 50.0));
 
-            CalculadorDeDesconto calculador = new CalculadorDeDesconto();
-            Console.WriteLine(calculador.Calcula(orcamento));
-            Console.ReadKey();
+            //CalculadorDeDesconto calculador = new CalculadorDeDesconto();
+            //Console.WriteLine(calculador.Calcula(orcamento));
+
             /*Imposto icms = new ICMS();
             Imposto iss = new ISS();
             Imposto iccc = new ICCC();
@@ -28,8 +28,14 @@ namespace DesignPatterns
             CalculadorDeImposto calculador = new CalculadorDeImposto();
             calculador.CalculaImposto(orcamento, icms);
             calculador.CalculaImposto(orcamento, iss);
-            calculador.CalculaImposto(orcamento, iccc);
-            Console.WriteLine(iccc.Calcula(orcamento));*/            
+            calculador.CalculaImposto(orcamento, iccc);*/
+
+            //Testando o Template Method            
+            TemplateDeImpostoCondicional ihit = new IHIT();
+            CalculadorDeImposto calculador = new CalculadorDeImposto();           
+            calculador.CalculaImposto(orcamento, ihit);           
+            
+            Console.ReadKey();
         }
     }
 }
