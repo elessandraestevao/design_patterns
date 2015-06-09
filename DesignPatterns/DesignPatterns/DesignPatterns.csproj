@@ -41,25 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculadorDeDesconto.cs" />
-    <Compile Include="CalculadorDeImposto.cs" />
-    <Compile Include="Desconto.cs" />
-    <Compile Include="DescontoParaCompraAcimaDeQuinhentosReais.cs" />
-    <Compile Include="DescontoParaMaisDeCincoItens.cs" />
-    <Compile Include="DescontoPorVendaCasada.cs" />
-    <Compile Include="ICCC.cs" />
-    <Compile Include="ICMS.cs" />
-    <Compile Include="ICPP.cs" />
-    <Compile Include="IHIT.cs" />
-    <Compile Include="IKCV.cs" />
-    <Compile Include="Imposto.cs" />
-    <Compile Include="ISS.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Orcamento.cs" />
+    <Compile Include="modelo\ImpostoMuitoAlto.cs" />
+    <Compile Include="servico\CalculadorDeDesconto.cs" />
+    <Compile Include="servico\CalculadorDeImposto.cs" />
+    <Compile Include="servico\Desconto.cs" />
+    <Compile Include="servico\DescontoParaCompraAcimaDeQuinhentosReais.cs" />
+    <Compile Include="servico\DescontoParaMaisDeCincoItens.cs" />
+    <Compile Include="servico\DescontoPorVendaCasada.cs" />
+    <Compile Include="modelo\ICCC.cs" />
+    <Compile Include="modelo\ICMS.cs" />
+    <Compile Include="modelo\ICPP.cs" />
+    <Compile Include="modelo\IHIT.cs" />
+    <Compile Include="modelo\IKCV.cs" />
+    <Compile Include="modelo\Imposto.cs" />
+    <Compile Include="modelo\ISS.cs" />
+    <Compile Include="modelo\Item.cs" />
+    <Compile Include="modelo\Orcamento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SemDesconto.cs" />
-    <Compile Include="TemplateDeImpostoCondicional.cs" />
+    <Compile Include="servico\SemDesconto.cs" />
+    <Compile Include="modelo\TemplateDeImpostoCondicional.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
