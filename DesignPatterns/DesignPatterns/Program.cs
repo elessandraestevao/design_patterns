@@ -12,10 +12,26 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
             Orcamento orcamento = new Orcamento(500.0);
-            Imposto imposto = new IKCV(new ICPP());
+            Console.WriteLine(orcamento.Valor);
+
+            //em aprovação
+            orcamento.AplicaDescontoExtra();
+            Console.WriteLine(orcamento.Valor);
+
+            //aprovado
+            orcamento.Aprova();
+            orcamento.AplicaDescontoExtra();
+            Console.WriteLine(orcamento.Valor);
+
+            //finalizado
+            //orcamento.Finaliza();
+            orcamento.AplicaDescontoExtra();
+
+
+            /*Imposto imposto = new IKCV(new ICPP());
             double valor = imposto.Calcula(orcamento);
             Console.WriteLine(valor);
-            /*Orcamento orcamento = new Orcamento(1000.0);
+            Orcamento orcamento = new Orcamento(1000.0);
             orcamento.AdicionaItem(new Item("LAPIS", 100.0));
             orcamento.AdicionaItem(new Item("Item2", 200.0));
             orcamento.AdicionaItem(new Item("Item3", 300.0));

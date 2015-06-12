@@ -41,7 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="modelo\Aprovado.cs" />
+    <Compile Include="modelo\EmAprovacao.cs" />
+    <Compile Include="modelo\EstadoDoOrcamento.cs" />
+    <Compile Include="modelo\Finalizado.cs" />
     <Compile Include="modelo\ImpostoMuitoAlto.cs" />
+    <Compile Include="modelo\Reprovado.cs" />
     <Compile Include="servico\CalculadorDeDesconto.cs" />
     <Compile Include="servico\CalculadorDeImposto.cs" />
     <Compile Include="servico\Desconto.cs" />
