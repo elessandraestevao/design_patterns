@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.modelo;
+using DesignPatterns.servico;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            Orcamento orcamento = new Orcamento(500.0);
+            /*Orcamento orcamento = new Orcamento(500.0);
             Console.WriteLine(orcamento.Valor);
 
             //em aprovação
@@ -28,7 +29,7 @@ namespace DesignPatterns
             orcamento.AplicaDescontoExtra();
 
 
-            /*Imposto imposto = new IKCV(new ICPP());
+            Imposto imposto = new IKCV(new ICPP());
             double valor = imposto.Calcula(orcamento);
             Console.WriteLine(valor);
             Orcamento orcamento = new Orcamento(1000.0);
@@ -54,7 +55,24 @@ namespace DesignPatterns
             //Testando o Template Method            
             TemplateDeImpostoCondicional ihit = new IHIT();
             CalculadorDeImposto calculador = new CalculadorDeImposto();           
-            calculador.CalculaImposto(orcamento, ihit);  */        
+            calculador.CalculaImposto(orcamento, ihit);  */
+
+            NotaFiscal nf = new NotaFiscalBuilder().ParaEmpresa("Empresa Teste")
+                .ComCnpj("123.234.343/0001-12")
+                .ComItem(new ItemDaNotaBuilder().ComDescricao("Item 1").ComValor(100.0).Constroi())
+                .ComItem(new ItemDaNotaBuilder().ComDescricao("Item 2").ComValor(200.0).Constroi())
+                .ComItem(new ItemDaNotaBuilder().ComDescricao("Item 3").ComValor(300.0).Constroi())                
+                .ComObservacoes("Observacao da nota")
+                //.NaData(DateTime.Now)
+                .Constroi();
+
+            Console.WriteLine(nf.RazaoSocial + " " + nf.Cnpj);
+            Console.WriteLine(nf.Observacoes + " " + nf.DataDeEmissao);
+            Console.WriteLine(nf.ValorBruto + " " + nf.Impostos);
+            foreach (var item in nf.Itens)
+            {
+                Console.WriteLine(item.Descricao + " " + item.Valor);
+            }
             
             Console.ReadKey();
         }

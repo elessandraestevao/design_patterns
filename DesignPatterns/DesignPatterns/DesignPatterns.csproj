@@ -46,6 +46,8 @@
     <Compile Include="modelo\EstadoDoOrcamento.cs" />
     <Compile Include="modelo\Finalizado.cs" />
     <Compile Include="modelo\ImpostoMuitoAlto.cs" />
+    <Compile Include="modelo\ItemDaNota.cs" />
+    <Compile Include="modelo\NotaFiscal.cs" />
     <Compile Include="modelo\Reprovado.cs" />
     <Compile Include="servico\CalculadorDeDesconto.cs" />
     <Compile Include="servico\CalculadorDeImposto.cs" />
@@ -64,6 +66,8 @@
     <Compile Include="modelo\Orcamento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="servico\ItemDaNotaBuilder.cs" />
+    <Compile Include="servico\NotaFiscalBuilder.cs" />
     <Compile Include="servico\SemDesconto.cs" />
     <Compile Include="modelo\TemplateDeImpostoCondicional.cs" />
   </ItemGroup>
