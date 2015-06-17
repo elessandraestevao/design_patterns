@@ -16,6 +16,14 @@ namespace DesignPatterns.servico
         public DateTime DataDeEmissao { get; set; }
         public String Observacoes { get; set; }
         public IList<ItemDaNota> Itens { get; set; }
+        private IList<AcaoAposGerarNota> todasAcoesAposGerarNota = new List<AcaoAposGerarNota>();
+
+        public NotaFiscalBuilder(IList<AcaoAposGerarNota> acoes)
+        {
+            this.Itens = new List<ItemDaNota>();
+            this.DataDeEmissao = DateTime.Now;
+            this.todasAcoesAposGerarNota = acoes;
+        }
 
         public NotaFiscalBuilder()
         {
@@ -53,11 +61,26 @@ namespace DesignPatterns.servico
         {
             this.DataDeEmissao = data;
             return this;
-        }        
+        }
+
+        /*public NotaFiscalBuilder Executa(AcaoAposGerarNota novaAcao)
+        {
+            this.todasAcoesAposGerarNota.Add(novaAcao);
+            return this;
+        }*/
+      
+        private void executaAcaoAposGerarNota(NotaFiscal nf){
+            foreach (AcaoAposGerarNota acao in todasAcoesAposGerarNota)
+            {
+                acao.Executa(nf);
+            }
+        }
 
         public NotaFiscal Constroi()
         {            
-            return new NotaFiscal(RazaoSocial, Cnpj, ValorBruto, Impostos, DataDeEmissao, Observacoes, Itens);
+            NotaFiscal nf = new NotaFiscal(RazaoSocial, Cnpj, ValorBruto, Impostos, DataDeEmissao, Observacoes, Itens);
+            executaAcaoAposGerarNota(nf);
+            return nf;
         }
     }
 }

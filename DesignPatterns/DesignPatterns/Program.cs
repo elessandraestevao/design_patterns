@@ -57,13 +57,18 @@ namespace DesignPatterns
             CalculadorDeImposto calculador = new CalculadorDeImposto();           
             calculador.CalculaImposto(orcamento, ihit);  */
 
-            NotaFiscal nf = new NotaFiscalBuilder().ParaEmpresa("Empresa Teste")
+            IList<AcaoAposGerarNota> acoes = new List<AcaoAposGerarNota>();
+            acoes.Add(new EnviadorDeEmail());
+            acoes.Add(new NotaFiscalDao());
+            acoes.Add(new Multiplicador(4.5));
+            
+
+            NotaFiscal nf = new NotaFiscalBuilder(acoes).ParaEmpresa("Empresa Teste")
                 .ComCnpj("123.234.343/0001-12")
                 .ComItem(new ItemDaNotaBuilder().ComDescricao("Item 1").ComValor(100.0).Constroi())
                 .ComItem(new ItemDaNotaBuilder().ComDescricao("Item 2").ComValor(200.0).Constroi())
                 .ComItem(new ItemDaNotaBuilder().ComDescricao("Item 3").ComValor(300.0).Constroi())                
-                .ComObservacoes("Observacao da nota")
-                //.NaData(DateTime.Now)
+                .ComObservacoes("Observacao da nota")               
                 .Constroi();
 
             Console.WriteLine(nf.RazaoSocial + " " + nf.Cnpj);
